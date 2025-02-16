@@ -60,7 +60,8 @@ void tab_goldbach(int T[2][MAX], int nb)
     
 }
 
-void affiche_tab(int T[2][MAX], int tailleT) {
+void affiche_tab(int T[2][MAX], int tailleT) 
+{
     printf("Decompositions de Goldbach :\n");
     for (int i = 0; i < tailleT; i++) 
     {
@@ -85,6 +86,3 @@ int main()
     affiche_tab(goldbach_tab, nb);    
     return 0;
 }
-
-
-//tablero incorrecto, skip pregunta sobre los numeros primeros n1 y n2 que sumados forman nb.
