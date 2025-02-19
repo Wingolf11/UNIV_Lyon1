@@ -59,6 +59,7 @@ void ajouter_un_cercle(suika *s)
         printf("Erreur : tableau plein, impossible d'ajouter un cercle.\n");
     }
 }
+
 bool intersection(cercle c1, cercle c2)
 {
     double D;
