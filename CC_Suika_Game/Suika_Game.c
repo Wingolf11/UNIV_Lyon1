@@ -99,17 +99,17 @@ void fusion(suika *s, int ic1, int ic2)
         return;
     }
 
-    // 1️⃣ Calculate new position (average of both centers)
+    // Calculate new position (average of both centers)
     s->tab[ic1].xc = (s->tab[ic1].xc + s->tab[ic2].xc) / 2;
     s->tab[ic1].yc = (s->tab[ic1].yc + s->tab[ic2].yc) / 2;
 
-    // 2️⃣ Increase the radius by 10
+    // Increase the radius by 10
     s->tab[ic1].r += 10;
 
-    // 3️⃣ Replace ic2 with the last circle in the list
+    // Replace ic2 with the last circle in the list
     s->tab[ic2] = s->tab[s->nb - 1];
 
-    // 4️⃣ Reduce the number of circles
+    // Reduce the number of circles
     s->nb--;
 
     printf("Fusion finis: Nouveau cercle en (%d, %d) avec rayon %d.\n",
@@ -124,15 +124,13 @@ int main()
     suika game;
     game.nb = val_alea(); // Generate 5 random circles
 
-    for (int i = 0; i < game.nb; i++) {
+    for (int i = 0; i < game.nb; i++)
         game.tab[i] = creer_cercle();  // Generate and store a random circle
-    }
 
     // Display generated circles
     printf("Initialy generated Circles:\n");
-    for (int i = 0; i < game.nb; i++) {
+    for (int i = 0; i < game.nb; i++)
         afficher_cercle(i, game.tab[i]);  // Print circle details
-    }
 
     int ic1, ic2;
 
@@ -143,14 +141,10 @@ int main()
         fusion(&game, ic1, ic2);  // Merge them
     } 
     else 
-    {
         printf("\nNo circles can merge.\n");
-    }
 
     printf("\nCircles after fusion:\n");
-    for (int i = 0; i < game.nb; i++) {
-        afficher_cercle(i, game.tab[i]);  // ✅ Using existing function
-    }
-
+    for (int i = 0; i < game.nb; i++) 
+        afficher_cercle(i, game.tab[i]);  
     return 0;
 }
