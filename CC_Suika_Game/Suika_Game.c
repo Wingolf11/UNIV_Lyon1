@@ -112,7 +112,7 @@ void fusion(suika *s, int ic1, int ic2)
     // Reduce the number of circles
     s->nb--;
 
-    printf("Fusion finis: Nouveau cercle en (%d, %d) avec rayon %d.\n",
+    printf("New circle at index (%d, %d) and this radius %d.\n",
            s->tab[ic1].xc, s->tab[ic1].yc, s->tab[ic1].r);
 }
 
